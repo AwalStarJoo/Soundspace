@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707731035589",
+    "project_id": "soundspace-app-85f53",
+    "storage_bucket": "soundspace-app-85f53.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707731035589:android:891b20f76d73682baca7ac",
+        "android_client_info": {
+          "package_name": "com.awalstarjo.soundspace_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNphqIu08VAOMnSb-7-Hoeh26GQmSFVNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
