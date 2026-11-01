@@ -1,3 +1,4 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepository {
@@ -21,7 +22,6 @@ class AuthRepository {
     );
 
     await credential.user?.updateDisplayName(name.trim());
-
     await credential.user?.reload();
 
     return credential;
@@ -43,7 +43,31 @@ class AuthRepository {
     await _auth.signOut();
   }
 
-  // FORGOT PASSWORD
+  // EDIT DISPLAY NAME
+  Future<void> updateDisplayName(String name) async {
+    final user = _auth.currentUser;
+
+    if (user == null) {
+      throw Exception('User belum login.');
+    }
+
+    final cleanedName = name.trim();
+
+    if (cleanedName.isEmpty) {
+      throw Exception('Nama tidak boleh kosong.');
+    }
+
+    await user.updateDisplayName(cleanedName);
+    await user.reload();
+  }
+
+  // REFRESH USER DATA
+  Future<User?> reloadUser() async {
+    await _auth.currentUser?.reload();
+    return _auth.currentUser;
+  }
+
+  // FORGOT / RESET PASSWORD
   Future<void> resetPassword(String email) async {
     await _auth.sendPasswordResetEmail(
       email: email.trim(),
